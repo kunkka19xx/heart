@@ -543,7 +543,7 @@
         colors = ["red", "pink", "yellow", "violet", "blue", "white", "light-blue", "light-red", "cyan"];
         // let color = "red";
         let second = new Date().getSeconds();
-        if (second % 6 == 0 && second > second*6) {
+        if (second % 6 == 0) {
           let randomIndex = Math.floor(Math.random() * colors.length);
           color = colors[randomIndex];
         } else color = color;
