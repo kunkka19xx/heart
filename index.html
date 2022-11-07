@@ -535,11 +535,19 @@
         ctx.fillRect(0, 0, w, h);
       }
 
+      let color = "red";
       function draw() {
         requestAnimationFrame(draw);
         ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
         ctx.fillRect(0, 0, w, h);
-        ctx.fillStyle = "pink";
+        colors = ["red", "pink", "yellow", "violet", "blue", "white", "light-blue", "light-red", "cyan"];
+        // let color = "red";
+        let second = new Date().getSeconds();
+        if (second % 6 == 0 && second > second*6) {
+          let randomIndex = Math.floor(Math.random() * colors.length);
+          color = colors[randomIndex];
+        } else color = color;
+        ctx.fillStyle = color;
         particles.forEach((p) => {
           p.move();
           p.draw();
